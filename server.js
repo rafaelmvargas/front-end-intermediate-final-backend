@@ -28,6 +28,15 @@ app.use(express.static("public"));
 app.use(express.json({ extended: false })); // for parsing application/json
 app.use(express.urlencoded({ extended: false })); // for parsing application/x-www-form-urlencoded
 app.use(fileUpload());
+app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept"
+  );
+  res.header("Access-Control-Allow-Methods", "GET,PUT,POST,DELETE");
+  next();
+});
 
 app.get("/", function (req, res) {
   res.sendFile(__dirname + "/public/index.html");

@@ -4,6 +4,7 @@ const mongoose = require("mongoose");
 const RecipeSchema = new mongoose.Schema({
   title: String,
   description: String,
+  instructions: String,
   image: String,
   year: String,
 });
