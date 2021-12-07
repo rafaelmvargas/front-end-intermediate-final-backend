@@ -3,7 +3,7 @@ function showDetail() {
   const urlParams = new URLSearchParams(window.location.search);
   const recipeId = urlParams.get("recipe");
 
-  fetch(`api/recipes/${recipeId}`, {
+  fetch(`api/movies/${recipeId}`, {
     method: "GET",
   })
     .then((response) => response.json())
@@ -39,7 +39,7 @@ const updateRecipe = (event) => {
     image: image.value,
     description: description.value,
   };
-  fetch(`api/recipes/${recipeId}`, {
+  fetch(`api/movies/${recipeId}`, {
     method: "PUT",
     body: JSON.stringify(updatedRecipe),
     headers: {
