@@ -67,7 +67,7 @@ exports.import = function (req, res) {
       url: "https://www.imdb.com/title/tt6920084/",
       description:
         "Set in 1998, this origin story explorers the secrets of the mysterious Spencer Mansion and the ill-fated Raccoon City. The story follows the lives of Spencer and his wife, Evelyn, as they attempt to uncover the truth behind the mysterious disappearance of their beloved son.",
-      image: "poster_resident_evil_welcome_to_raccoon_city.jpg",
+      posterImage: "poster_resident_evil_welcome_to_raccoon_city.jpg",
       releaseDate: "2021-11-24",
     },
     {
@@ -76,7 +76,7 @@ exports.import = function (req, res) {
       starring: ["Ralph Fiennes", "Gemma Arterton", "Rhys Ifans"],
       description:
         "In the early years of the 20th century, the Kingsman agency is formed to stand against a cabal plotting a war to wipe out millions.",
-      image: "poster_the_kings_man.jpg",
+      posterImage: "poster_the_kings_man.jpg",
       releaseDate: "2021-12-22",
     },
     {
@@ -85,7 +85,7 @@ exports.import = function (req, res) {
       starring: ["Timothée Chalamet", "Rebecca Ferguson", "Zendaya"],
       description:
         "Feature adaptation of Frank Herbert's science fiction novel about the son of a noble family entrusted with the protection of the most valuable asset and most vital element in the galaxy.",
-      image: "poster_dune.jpg",
+      posterImage: "poster_dune.jpg",
       releaseDate: "2021-10-22",
     },
     function (err) {
