@@ -1,31 +1,31 @@
 const mongoose = require("mongoose");
-const Recipe = mongoose.model("Recipe");
+const Movie = mongoose.model("Movie");
 
 exports.findAll = function (req, res) {
-  Recipe.find({}, function (err, results) {
+  Movie.find({}, function (err, results) {
     return res.send(results);
   });
 };
 
 exports.findById = (req, res) => {
   const id = req.params.id;
-  Recipe.findOne({ _id: id }, (err, json) => {
+  Movie.findOne({ _id: id }, (err, json) => {
     if (err) return console.log(err);
     return res.send(json);
   });
 };
 
 exports.add = function (req, res) {
-  Recipe.create(req.body, function (err, recipe) {
+  Movie.create(req.body, function (err, Movie) {
     if (err) return console.log(err);
-    return res.send(recipe);
+    return res.send(Movie);
   });
 };
 
 exports.update = function (req, res) {
   console.log(req.body);
   const id = req.params.id;
-  Recipe.findByIdAndUpdate(id, req.body, { new: true }, (err, response) => {
+  Movie.findByIdAndUpdate(id, req.body, { new: true }, (err, response) => {
     if (err) return console.log(err);
     res.send(response);
   });
@@ -33,7 +33,7 @@ exports.update = function (req, res) {
 
 exports.delete = function (req, res) {
   let id = req.params.id;
-  Recipe.deleteOne({ _id: id }, () => {
+  Movie.deleteOne({ _id: id }, () => {
     return res.sendStatus(202);
   });
 };
@@ -54,7 +54,7 @@ exports.upload = function (req, res) {
 };
 
 exports.import = function (req, res) {
-  Recipe.create(
+  Movie.create(
     {
       title: "Lasagna",
       description:
@@ -75,7 +75,7 @@ exports.import = function (req, res) {
     {
       title: "Guacamole",
       description:
-        "Guacamole is definitely a staple of Mexican cuisine. Even though Guacamole is pretty simple, it can be tough to get the perfect flavor - with this authentic Mexican guacamole recipe, though, you will be an expert in no time.",
+        "Guacamole is definitely a staple of Mexican cuisine. Even though Guacamole is pretty simple, it can be tough to get the perfect flavor - with this authentic Mexican guacamole Movie, though, you will be an expert in no time.",
       image: "guacamole.png",
       instructions: "lorem ipsum",
       year: "2017",
@@ -97,7 +97,7 @@ exports.import = function (req, res) {
 };
 
 exports.killall = function (req, res) {
-  Recipe.deleteMany({}, (err) => {
+  Movie.deleteMany({}, (err) => {
     if (err) return console.log(err);
     return res.sendStatus(202);
   });
