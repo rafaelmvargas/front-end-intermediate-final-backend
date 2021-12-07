@@ -56,38 +56,37 @@ exports.upload = function (req, res) {
 exports.import = function (req, res) {
   Movie.create(
     {
-      title: "Lasagna",
+      title: "The Matrix Resurrections",
       description:
-        "Lasagna noodles piled high and layered full of three kinds of cheese to go along with the perfect blend of meaty and zesty, tomato pasta sauce all loaded with herbs.",
-      image: "lasagna.png",
-      instructions: "lorem ipsum",
-      year: "2015",
+        "The Matrix cast reunites for the fourth installment of the epic saga. Neo (Keanu Reeves) and Trinity (Laurence Fishburne) are forced to choose one another to fight a war for the survival of the human race.",
+      posterImage: "poster_matrix_resurrections.jpg",
+      releaseDate: "2021-12-22",
     },
     {
-      title: "Pho-Chicken Noodle Soup",
+      title: "Resident Evil: Welcome to Raccoon City",
+      url: "https://www.imdb.com/title/tt6920084/",
       description:
-        'Pho (pronounced "fuh") is the most popular food in Vietnam, often eaten for breakfast, lunch and dinner. It is made from a special broth that simmers for several hours infused with exotic spices and served over rice noodles with fresh herbs.',
-      image: "pho.png",
-      instructions: "lorem ipsum",
-      year: "2016",
+        "Set in 1998, this origin story explorers the secrets of the mysterious Spencer Mansion and the ill-fated Raccoon City. The story follows the lives of Spencer and his wife, Evelyn, as they attempt to uncover the truth behind the mysterious disappearance of their beloved son.",
+      image: "poster_resident_evil_welcome_to_raccoon_city.jpg",
+      releaseDate: "2021-11-24",
     },
-
     {
-      title: "Guacamole",
+      title: "The King's Man",
+      url: "https://www.imdb.com/title/tt6856242/",
+      starring: ["Ralph Fiennes", "Gemma Arterton", "Rhys Ifans"],
       description:
-        "Guacamole is definitely a staple of Mexican cuisine. Even though Guacamole is pretty simple, it can be tough to get the perfect flavor - with this authentic Mexican guacamole Movie, though, you will be an expert in no time.",
-      image: "guacamole.png",
-      instructions: "lorem ipsum",
-      year: "2017",
+        "In the early years of the 20th century, the Kingsman agency is formed to stand against a cabal plotting a war to wipe out millions.",
+      image: "poster_the_kings_man.jpg",
+      releaseDate: "2021-12-22",
     },
-
     {
-      title: "Hamburger",
+      title: "Dune",
+      url: "https://www.imdb.com/title/tt1160419/",
+      starring: ["Timothée Chalamet", "Rebecca Ferguson", "Zendaya"],
       description:
-        "A Hamburger (often called a burger) is a type of sandwich in the form of  rounded bread sliced in half with its center filled with a patty which is usually ground beef, then topped with vegetables such as lettuce, tomatoes and onions.",
-      image: "hamburger.png",
-      instructions: "lorem ipsum",
-      year: "2018",
+        "Feature adaptation of Frank Herbert's science fiction novel about the son of a noble family entrusted with the protection of the most valuable asset and most vital element in the galaxy.",
+      image: "poster_the_kings_man.jpg",
+      releaseDate: "2021-10-22",
     },
     function (err) {
       if (err) return console.log(err);

@@ -8,14 +8,14 @@ if (process.env.NODE_ENV === "production") {
 
 console.log("process.env.NODE_ENV = ", process.env.NODE_ENV);
 
-const recipeModel = require("./api/recipe.model");
-const recipeControllers = require("./api/recipe.controllers");
+const movieModel = require("./api/movie.model");
+const movieControllers = require("./api/movie.controllers");
 
 const app = express();
 
 const dataBaseURL = process.env.DATABASE || "mongodb://localhost:27017";
 // const dataBaseURL = "mongodb://localhost:27017"; // use the local docker database
-// const dataBaseURL = "mongodb+srv://daniel:dd2345@cluster0.bs2la.mongodb.net/recipes?retryWrites=true&w=majority"; // use the hosted database
+// const dataBaseURL = "mongodb+srv://daniel:dd2345@cluster0.bs2la.mongodb.net/movies?retryWrites=true&w=majority"; // use the hosted database
 
 console.log("dataBaseURL::", dataBaseURL);
 
@@ -42,14 +42,14 @@ app.get("/", function (req, res) {
   res.sendFile(__dirname + "/public/index.html");
 });
 
-app.get("/api/recipes", recipeControllers.findAll);
-app.get("/api/recipes/:id", recipeControllers.findById);
-app.post("/api/recipes", recipeControllers.add);
-app.put("/api/recipes/:id", recipeControllers.update);
-app.delete("/api/recipes/:id", recipeControllers.delete);
-app.get("/api/import", recipeControllers.import);
-app.get("/api/killall", recipeControllers.killall);
-app.post("/api/upload", recipeControllers.upload);
+app.get("/api/movies", movieControllers.findAll);
+app.get("/api/movies/:id", movieControllers.findById);
+app.post("/api/movies", movieControllers.add);
+app.put("/api/movies/:id", movieControllers.update);
+app.delete("/api/movies/:id", movieControllers.delete);
+app.get("/api/import", movieControllers.import);
+app.get("/api/killall", movieControllers.killall);
+app.post("/api/upload", movieControllers.upload);
 
 const PORT = process.env.PORT || 3456;
 
