@@ -6,7 +6,11 @@ const RecipeSchema = new mongoose.Schema({
   description: String,
   instructions: String,
   image: String,
-  year: String,
+  // year: String,
+  year: {
+    type: Number,
+    required: true,
+  },
 });
 
 const Recipe = mongoose.model("Recipe", RecipeSchema);
