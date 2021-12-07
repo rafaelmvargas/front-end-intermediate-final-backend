@@ -85,7 +85,7 @@ exports.import = function (req, res) {
       starring: ["Timothée Chalamet", "Rebecca Ferguson", "Zendaya"],
       description:
         "Feature adaptation of Frank Herbert's science fiction novel about the son of a noble family entrusted with the protection of the most valuable asset and most vital element in the galaxy.",
-      image: "poster_the_kings_man.jpg",
+      image: "poster_dune.jpg",
       releaseDate: "2021-10-22",
     },
     function (err) {
