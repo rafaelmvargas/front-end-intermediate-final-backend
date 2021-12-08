@@ -1,6 +1,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const fileUpload = require("express-fileupload");
+var cors = require("cors");
 
 if (process.env.NODE_ENV === "production") {
   require("dotenv").config();
@@ -24,19 +25,26 @@ mongoose
   .then(() => console.log("MongoDb connected"))
   .catch((err) => console.log(err));
 
+
+app.use(cors());
+
+
 app.use(express.static("public"));
 app.use(express.json({ extended: false })); // for parsing application/json
 app.use(express.urlencoded({ extended: false })); // for parsing application/x-www-form-urlencoded
 app.use(fileUpload());
-app.use((req, res, next) => {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header(
-    "Access-Control-Allow-Headers",
-    "Origin, X-Requested-With, Content-Type, Accept"
-  );
-  res.header("Access-Control-Allow-Methods", "GET,PUT,POST,DELETE");
-  next();
-});
+
+app.options("*", cors()); // include before other routes
+
+// app.use((req, res, next) => {
+//   res.header("Access-Control-Allow-Origin", "*");
+//   res.header(
+//     "Access-Control-Allow-Headers",
+//     "Origin, X-Requested-With, Content-Type, Accept"
+//   );
+//   res.header("Access-Control-Allow-Methods", "GET,PUT,POST,DELETE");
+//   next();
+// });
 
 app.get("/", function (req, res) {
   res.sendFile(__dirname + "/public/index.html");

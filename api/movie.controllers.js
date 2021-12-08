@@ -25,9 +25,10 @@ exports.add = function (req, res) {
 exports.update = function (req, res) {
   console.log(req.body);
   const id = req.params.id;
-  Movie.findByIdAndUpdate(id, req.body, { new: true }, (err, response) => {
+  Movie.findByIdAndUpdate(id, req.body, { new: true }, (err, json) => {
     if (err) return console.log(err);
-    res.send(response);
+    res.json(json);
+    // TODO: Send back JSON response
   });
 };
 
